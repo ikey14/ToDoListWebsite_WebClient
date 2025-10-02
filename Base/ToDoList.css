@@ -1,0 +1,20 @@
+
+/* Makes body full size */
+body 
+{
+    min-height: 100%; 
+    height: 100vh;
+}
+
+.roundedBorder
+{
+    border-radius: 8px;
+}
+
+.grayWhiteGradBG
+{
+    background-image: linear-gradient(to top right, rgb(68, 68, 68), white);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+

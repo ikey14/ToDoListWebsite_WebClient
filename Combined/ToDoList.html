@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset = "UTF-8">
+    <title>To Do List</title>
+    <link rel = "stylesheet" href = "ToDoList.css">
+    <script type = "text/javascript" src = "ToDoList.js"></script>
+</head>
+
+<body class = "grayWhiteGradBG">
+    <h1>TO DO:</h1>
+    <!-- <label for "taskInput">Base:</label> -->
+    <input class = "roundedBorder grayWhiteGradBG" type ="text" id = "taskInput" name = "taskInput"><br><br>
+    <button class = "roundedBorder grayWhiteGradBG" id = "newTaskButton" onclick = "AddElementUser()">ADD TASK</button>
+    <button class = "roundedBorder grayWhiteGradBG" id = "newTaskButton" onclick = "GetList()">DOWNLOAD TO-DO LIST</button>
+    <ul id = "toDoList">
+    </ul>
+</body>
+
+</html>
