@@ -52,13 +52,12 @@ function GetList()
     .then(response => response.json())
     // Since this is also promise based, we need to wait again.
     // once we have the JSON, we take the important info of the first 10 elements
-    .then(data => {
-        for (let i = 0; i < 10; i++) 
-        {
-            const task = data[i];
+    .then(data => data.slice(0, 10))
+    .then(data10 => {
+        data10.forEach(task => {
             console.log(task.title);
             AddElementAPI(task.title, task.completed);
-        }
+        });
     })
     .catch(error => console.error(error));
 
@@ -89,6 +88,7 @@ function AddElementAPI(taskText, completedStatus)
     taskComplete.className = "roundedBorder grayWhiteGradBG";
     taskComplete.innerText = "✔";
     taskSpan.style.textDecoration = completedStatus ? "line-through" : "none";
+    taskSpan.className = completedStatus? "completed" : "notCompleted";
     taskComplete.onclick = () => {taskSpan.style.textDecoration = taskSpan.style.textDecoration === "line-through" ? "none" : "line-through";};
 
     // Delete Button
